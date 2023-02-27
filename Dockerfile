@@ -60,8 +60,8 @@ RUN --mount=type=cache,target=${PIP_CACHE_DIR} \
         --find-links=/tmp/wheels/ \
         -r /tmp/requirements.txt
 
-# RUN jupyter labextension disable @jupyterlab/docmanager-extension:download \
-#    && jupyter labextension disable @jupyterlab/filebrowser-extension:download
+RUN jupyter labextension disable @jupyterlab/docmanager-extension:download \
+    && jupyter labextension disable @jupyterlab/filebrowser-extension:download
 
 WORKDIR ${HOME}
 USER ${NB_USER}
