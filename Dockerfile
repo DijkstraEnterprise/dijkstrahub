@@ -59,6 +59,9 @@ RUN --mount=type=cache,target=${PIP_CACHE_DIR} \
     pip install \
         --find-links=/tmp/wheels/ \
         -r /tmp/requirements.txt
+        
+RUN jupyter labextension install @wallneradam/custom_css
+RUN jupyter labextension enable @wallneradam/custom_css
 
 RUN jupyter labextension disable @jupyterlab/docmanager-extension:download \
     && jupyter labextension disable @jupyterlab/filebrowser-extension:download
