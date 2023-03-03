@@ -60,6 +60,10 @@ RUN --mount=type=cache,target=${PIP_CACHE_DIR} \
         --find-links=/tmp/wheels/ \
         -r /tmp/requirements.txt
         
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - 
+RUN apt-get install -y nodejs
+
+
 RUN jupyter labextension install @wallneradam/custom_css
 RUN jupyter labextension enable @wallneradam/custom_css
 
