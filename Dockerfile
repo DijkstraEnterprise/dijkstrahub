@@ -63,9 +63,6 @@ RUN --mount=type=cache,target=${PIP_CACHE_DIR} \
 RUN jupyter labextension disable @jupyterlab/docmanager-extension:download \
     && jupyter labextension disable @jupyterlab/filebrowser-extension:download
 
-RUN pip install nbgrader
-
-
 COPY startup.ipy /home/jovyan/.ipython/profile_default/startup/
 
 WORKDIR ${HOME}
